@@ -15,13 +15,13 @@ export class ContentList {
         this.contentArray.push(Content);
     }
 
-    numOfItem(): number {
+    public getNumberOfItem(): number {
         return this.contentArray.length;
     }
 
-    Output(index: number): string {
+    public getContent(index: number): string {
         const contentItem = this.contentArray[index];
-        var numOfItems = this.numOfItem();
+        var numOfItems = this.getNumberOfItem();
         if(index < 0 || index > numOfItems) {
             const errMsg = '<p style="color: red">Invelid Index</p>';
 
