@@ -1,5 +1,8 @@
+Name : - Ruchita Patel
+Assignment 1 - My Fevourite Books
 # RucPatelMyFavouriteBooks
-
+Theme Name
+My Theme name is favourite Books and I will be creating project on book that I read.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
 
 ## Development server

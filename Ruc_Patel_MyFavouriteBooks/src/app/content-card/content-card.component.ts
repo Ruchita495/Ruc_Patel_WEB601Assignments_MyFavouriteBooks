@@ -17,7 +17,7 @@ export class ContentCardComponent {
       title: 'Bhagavad Gita',
       description: 'The Bhagavad Gita is set in a narrative framework of dialogue between the Pandava prince Arjuna and his charioteer guide Krishna, an avatar of Vishnu. At the start of the Kurukshetra War between the Pandavas and the Kauravas.',
       creator: 'Vyasa',
-      imgURL: 'counterstrike.png',
+      imgURL: 'the-bhagavad-gita.jpg',
       type: 'Spiritual',
       tags: ["Sanskrit","Multilanguage"],
     });
@@ -26,7 +26,7 @@ export class ContentCardComponent {
       title: 'Three Thousand Stitches',
       description: 'hree Thousand Stitches is a book written by Sudha Murthy and published in 2017. The book is a collection of 11 different stories, which she draws from her personal life, with a message engraved in every story.',
       creator: 'Sudha Murthy',
-      imgURL: 'rdr2.png',
+      imgURL: 'Three_Thousand_Stitches.jpg',
       type: 'Motivational',
       tags: ["self-sustainable","personal experiences"],
     });
@@ -35,7 +35,7 @@ export class ContentCardComponent {
       title: 'Avengers',
       description: 'The Avengers are an all-star ensemble cast of established superhero characters from the Marvel Comics portfolio. Diegetically, these superheroes usually operate independently but occasionally assemble as a team to tackle especially formidable villains.',
       creator: 'Stan Lee ,Jack Kirby',
-      imgURL: 'seaofthieves.png',
+      imgURL: 'Avengers.jpg',
       type: 'Comic',
       tags: ["Captain Marvel","Captain America","Iron Man"],
     });
