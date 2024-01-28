@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { CommonModule } from '@angular/common';
+import { ContentCardComponent } from "../content-card/content-card.component";
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ContentCardComponent],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
 export class ContentListComponent {
 
-  contents: Content[] = [{
+  contentArray: Content[];
+  constructor() {
+    this.contentArray = [{
       id: 1,
       title: 'Bhagavad Gita',
       description: 'The Bhagavad Gita is set in a narrative framework of dialogue between the Pandava prince Arjuna and his charioteer guide Krishna, an avatar of Vishnu. At the start of the Kurukshetra War between the Pandavas and the Kauravas.',
@@ -37,7 +40,6 @@ export class ContentListComponent {
       imgURL: 'https://www.cardboardmemories.ca/cdn/shop/products/347a3d800381f5ce90967d1b2cdacfb5_700x700.jpg?v=1693984901',
       type: 'Comic',
       tags: ["Captain Marvel","Captain America","Iron Man"],
-    }
-  ];
-
+    }];
+  }
 }
