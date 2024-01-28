@@ -1,1 +1,9 @@
 <p>content-list works!</p>
+<div *ngFor="let content of contents" class="content-card">
+    <h3>{{ content.title }}</h3>
+    <p>{{ content.description }}</p>
+    <p>{{ content.creator }}</p>
+    <p>{{ content.imgURL }}</p>
+    <p>{{ content.type }}</p>
+    <p>{{ content.tags }}</p>
+  </div>
