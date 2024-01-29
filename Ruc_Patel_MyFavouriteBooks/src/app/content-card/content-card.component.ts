@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { Content } from '../helper-files/content-interface';
+
 @Component({
   selector: 'app-content-card',
   standalone: true,

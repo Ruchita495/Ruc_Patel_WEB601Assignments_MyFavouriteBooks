@@ -40,6 +40,15 @@ export class ContentListComponent {
       imgURL: 'https://www.cardboardmemories.ca/cdn/shop/products/347a3d800381f5ce90967d1b2cdacfb5_700x700.jpg?v=1693984901',
       type: 'Comic',
       tags: ["Captain Marvel","Captain America","Iron Man"],
-    }];
+    },
+    {
+      id: 4,
+      title: 'Avengers',
+      description: 'The Avengers are an all-star ensemble cast of established superhero characters from the Marvel Comics portfolio. Diegetically, these superheroes usually operate independently but occasionally assemble as a team to tackle especially formidable villains.',
+      creator: 'Stan Lee ,Jack Kirby',
+      imgURL: 'https://www.cardboardmemories.ca/cdn/shop/products/347a3d800381f5ce90967d1b2cdacfb5_700x700.jpg?v=1693984901',
+      type: 'Comic',
+      tags: ["Captain Marvel","Captain America","Iron Man"],
+  }];
   }
 }
