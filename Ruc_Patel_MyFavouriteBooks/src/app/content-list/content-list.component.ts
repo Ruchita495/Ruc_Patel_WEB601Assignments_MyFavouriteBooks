@@ -43,12 +43,30 @@ export class ContentListComponent {
     },
     {
       id: 4,
-      title: 'Avengers',
-      description: 'The Avengers are an all-star ensemble cast of established superhero characters from the Marvel Comics portfolio. Diegetically, these superheroes usually operate independently but occasionally assemble as a team to tackle especially formidable villains.',
-      creator: 'Stan Lee ,Jack Kirby',
-      imgURL: 'https://www.cardboardmemories.ca/cdn/shop/products/347a3d800381f5ce90967d1b2cdacfb5_700x700.jpg?v=1693984901',
-      type: 'Comic',
-      tags: ["Captain Marvel","Captain America","Iron Man"],
-  }];
+      title: 'The Power of Positive Thinking',
+      description: 'The Power of Positive Thinking: A Practical Guide to Mastering the Problems of Everyday Living is a 1952 self-help book by American minister Norman Vincent Peale.',
+      creator: 'Norman Vincent Peale',
+      imgURL: 'https://upload.wikimedia.org/wikipedia/en/8/86/The_Power_of_Positive_Thinking_%28Norman_Vincent_Peale%29.png',
+      type: 'Motivational',
+      tags: ["English"],
+  },
+  {
+    id: 5,
+    title: 'The Martian (Weir novel)',
+    description: 'The Martian is a 2011 science fiction debut novel written by Andy Weir. The book was originally self-published on Weirs blog, in a serialized format.In 2014, the book was re-released after Crown Publishing Group purchased the exclusive publishing rights.',
+    creator: 'Andy Weir',
+    imgURL: 'https://static01.nyt.com/images/2014/02/05/books/05before-and-after-slide-T6H2/05before-and-after-slide-T6H2-superJumbo.jpg?quality=75&auto=webp&disable=upscale',
+    type: 'Science fiction',
+    tags: [	"Print", "e-book", "audio"],
+},
+{
+  id: 6,
+  title: 'The Girl on the Train',
+  description: 'The Girl on the Train is a 2015 psychological thriller novel by British author Paula Hawkins that gives narratives from three different women about relationship troubles (caused by coercive/controlling men) and, for the main protagonist, alcoholism.',
+  creator: 'Paula Hawkins',
+  imgURL: 'https://m.media-amazon.com/images/I/81aZ76q5v0L._AC_UF1000,1000_QL80_.jpg',
+  type: 'Mystery',
+  tags: ["Print"],
+}];
   }
 }
