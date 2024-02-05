@@ -77,7 +77,7 @@ export class ContentListComponent {
     description: 'he Vachanamrut (IAST: Vacanāmṛta, lit. "immortalising ambrosia in the form of words") is a sacred Hindu text consisting of 273 religious discourses delivered by Swaminarayan from 1819 to 1829 CE and is considered the principal theological text within the Swaminarayan Sampradaya.',
     creator: 'Sahajanand Swami',
     imgURL: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Vachanamrut_English.jpg',
-    type: ' ',
+    type: 'Motivational',
     tags: ["Print"],
   },
 {
