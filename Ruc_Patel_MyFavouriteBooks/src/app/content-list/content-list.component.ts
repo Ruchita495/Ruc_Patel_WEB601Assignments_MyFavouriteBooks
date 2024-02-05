@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { CommonModule } from '@angular/common';
 import { ContentCardComponent } from "../content-card/content-card.component";
+import { ContentFilterPipe } from "../content-filter.pipe";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent],
+  imports: [CommonModule, ContentCardComponent, FormsModule, ContentFilterPipe],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
@@ -47,7 +49,7 @@ export class ContentListComponent {
       description: 'The Power of Positive Thinking: A Practical Guide to Mastering the Problems of Everyday Living is a 1952 self-help book by American minister Norman Vincent Peale.',
       creator: 'Norman Vincent Peale',
       imgURL: 'https://upload.wikimedia.org/wikipedia/en/8/86/The_Power_of_Positive_Thinking_%28Norman_Vincent_Peale%29.png',
-      type: 'Motivational',
+      type: ' ',
       tags: ["English"],
   },
   {
@@ -67,6 +69,41 @@ export class ContentListComponent {
   imgURL: 'https://m.media-amazon.com/images/I/81aZ76q5v0L._AC_UF1000,1000_QL80_.jpg',
   type: 'Mystery',
   tags: ["Print"],
+}
+,
+  {
+    id: 7,
+    title: 'Vachanamrut',
+    description: 'he Vachanamrut (IAST: Vacanāmṛta, lit. "immortalising ambrosia in the form of words") is a sacred Hindu text consisting of 273 religious discourses delivered by Swaminarayan from 1819 to 1829 CE and is considered the principal theological text within the Swaminarayan Sampradaya.',
+    creator: 'Sahajanand Swami',
+    imgURL: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Vachanamrut_English.jpg',
+    type: ' ',
+    tags: ["Print"],
+  },
+{
+  id: 8,
+  title: 'Caper story',
+  description: 'The caper story is a subgenre of crime fiction. The typical caper story involves one or more crimes (especially thefts, swindles, or occasionally kidnappings) perpetrated by the main characters in full view of the reader.',
+  creator: 'Parnell Hall',
+  imgURL: 'https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781605981048/caper-9781605981048_hr.jpg',
+  type: 'Romance',
+  tags: ["Print"],
 }];
+  }
+  searchTitle: string = '';
+  searchMsg: string = '';
+  searchClr: string = '';
+
+  searchCard(): void{
+    const foundContent = this.contentArray.find(content => content.title === this.searchTitle); 
+
+    if (foundContent) {
+      this.searchMsg = `Content with title "${this.searchTitle}" exists.`;
+      this.searchClr = 'green';
+    }
+    else {
+      this.searchMsg = `Content with title "${this.searchTitle}" does not exist.`;
+      this.searchClr = 'red';
+    }
   }
 }
