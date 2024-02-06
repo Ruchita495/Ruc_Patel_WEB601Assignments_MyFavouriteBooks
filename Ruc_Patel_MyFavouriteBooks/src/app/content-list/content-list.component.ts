@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { ContentCardComponent } from "../content-card/content-card.component";
 import { ContentFilterPipe } from "../content-filter.pipe";
 import { FormsModule } from '@angular/forms';
+import { HoverAffectDirective } from '../hover-affect.directive';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, FormsModule, ContentFilterPipe],
+  imports: [CommonModule, ContentCardComponent, FormsModule, ContentFilterPipe, HoverAffectDirective],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
@@ -85,7 +86,6 @@ export class ContentListComponent {
   title: 'Caper story',
   description: 'The caper story is a subgenre of crime fiction. The typical caper story involves one or more crimes (especially thefts, swindles, or occasionally kidnappings) perpetrated by the main characters in full view of the reader.',
   creator: 'Parnell Hall',
-  imgURL: 'https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781605981048/caper-9781605981048_hr.jpg',
   type: 'Romance',
   tags: ["Print"],
 }];

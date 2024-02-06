@@ -1,13 +1,18 @@
 <!-- <p>content-card works!</p> -->
 
 <div class="content-card">
-    <img src="{{ content.imgURL }}" alt="{{content.title}}" class="imgs" (click)="onCardClick(content)">
+    <img *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" alt="{{ content.title }}" class="imgs" (click)="onCardClick(content)">
+    <!-- <img src="{{ content.imgURL }}" alt="{{content.title}}" class="imgs" (click)="onCardClick(content)"> -->
     <h3 style="text-align: center;">{{content.title}}</h3>
     <p><strong>Description: </strong>{{content.description}}</p>
     <p><strong>Creator: </strong>{{content.creator}}</p>
-    <p><strong>Type: </strong> {{content.type}}</p>
+    <p appHoverAffect><strong>Type: </strong> {{content.type}}</p>
     <strong>Tags:</strong>
-    <ul *ngFor="let tag of content.tags">
+    <ul *ngFor="let tag of content.tags" appHoverAffect>
         <li>{{tag}}</li>
     </ul>
 </div>
+
+<ng-template #defaultImage>
+    <img src="https://www.shutterstock.com/image-photo/one-book-isolated-on-white-600nw-2157870469.jpg" alt="Default Image" class="imgs" (click)="onCardClick(content)">
+  </ng-template>
