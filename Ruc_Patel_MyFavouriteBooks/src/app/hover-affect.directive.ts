@@ -1,4 +1,4 @@
-import { Directive,  ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Directive,  ElementRef, HostListener } from '@angular/core';
 import { ContentCardComponent } from './content-card/content-card.component';
 
 @Directive({
@@ -7,10 +7,11 @@ import { ContentCardComponent } from './content-card/content-card.component';
 })
 export class HoverAffectDirective {
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  constructor(private elm: ElementRef) { }
 
   @HostListener('mouseenter') onMouseEnter() {
     this.addEffect();
+    //this.addBoldEffect();
   }
 
   @HostListener('mouseleave') onMouseLeave() {
@@ -18,12 +19,10 @@ export class HoverAffectDirective {
   }
 
   private addEffect() {
-      this.renderer.setStyle(this.el.nativeElement, 'font-weight', 'bold');
-      this.renderer.setStyle(this.el.nativeElement, 'text-decoration', 'underline');
+      this.elm.nativeElement.style.textDecoration = 'underline';
   }
 
   private removeEffect() {
-      this.renderer.removeStyle(this.el.nativeElement, 'font-weight');
-      this.renderer.removeStyle(this.el.nativeElement, 'text-decoration');
+      this.elm.nativeElement.style.textDecoration = '';
   }
 }

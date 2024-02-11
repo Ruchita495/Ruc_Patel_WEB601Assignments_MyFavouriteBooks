@@ -49,7 +49,7 @@ export class ContentListComponent {
       title: 'The Power of Positive Thinking',
       description: 'The Power of Positive Thinking: A Practical Guide to Mastering the Problems of Everyday Living is a 1952 self-help book by American minister Norman Vincent Peale.',
       creator: 'Norman Vincent Peale',
-      imgURL: 'https://upload.wikimedia.org/wikipedia/en/8/86/The_Power_of_Positive_Thinking_%28Norman_Vincent_Peale%29.png',
+      //imgURL: 'https://upload.wikimedia.org/wikipedia/en/8/86/The_Power_of_Positive_Thinking_%28Norman_Vincent_Peale%29.png',
       type: ' ',
       tags: ["English"],
   },
