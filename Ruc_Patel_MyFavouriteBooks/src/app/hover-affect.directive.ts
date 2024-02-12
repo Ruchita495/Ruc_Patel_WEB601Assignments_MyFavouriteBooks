@@ -1,11 +1,11 @@
-import { Directive,  ElementRef, HostListener } from '@angular/core';
-import { ContentCardComponent } from './content-card/content-card.component';
+import { Directive,  ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appHoverAffect]',
   standalone: true
 })
 export class HoverAffectDirective {
+  @Input() hoverStyle: string = '';
 
   constructor(private elm: ElementRef) { }
 
@@ -19,10 +19,10 @@ export class HoverAffectDirective {
   }
 
   private addEffect() {
-      this.elm.nativeElement.style.textDecoration = 'underline';
+    this.elm.nativeElement.style[this.hoverStyle] = this.hoverStyle === 'textDecoration' ? 'underline' : 'bold';
   }
 
   private removeEffect() {
-      this.elm.nativeElement.style.textDecoration = '';
+    this.elm.nativeElement.style[this.hoverStyle] = this.hoverStyle === 'textDecoration' ? 'none' : 'normal';
   }
 }
