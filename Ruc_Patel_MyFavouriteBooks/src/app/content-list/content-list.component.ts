@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { CommonModule } from '@angular/common';
 import { ContentCardComponent } from "../content-card/content-card.component";
 import { ContentFilterPipe } from "../content-filter.pipe";
 import { FormsModule } from '@angular/forms';
-import { HoverAffectDirective } from '../hover-affect.directive';
+import { CreateContentComponent } from "../create-content/create-content.component";
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, FormsModule, ContentFilterPipe, HoverAffectDirective],
+  imports: [CommonModule, ContentCardComponent, FormsModule, ContentFilterPipe, CreateContentComponent],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
@@ -29,7 +29,7 @@ export class ContentListComponent {
     {
       id: 2,
       title: 'Three Thousand Stitches',
-      description: 'hree Thousand Stitches is a book written by Sudha Murthy and published in 2017. The book is a collection of 11 different stories, which she draws from her personal life, with a message engraved in every story.',
+      description: 'Three Thousand Stitches is a book written by Sudha Murthy and published in 2017. The book is a collection of 11 different stories, which she draws from her personal life, with a message engraved in every story.',
       creator: 'Sudha Murthy',
       imgURL: 'https://1.bp.blogspot.com/-S_260M3Og84/XOLk4Ahl7jI/AAAAAAAAAhE/rMkBx1giYkst8ee-I69R_89tqQkjKGvlQCLcBGAs/s1600/IMG_20190520_203356_935.jpg',
       type: 'Motivational',
@@ -105,5 +105,12 @@ export class ContentListComponent {
       this.searchMsg = `Content with title "${this.searchTitle}" does not exist.`;
       this.searchClr = 'red';
     }
+  }
+
+  onContentAdded(newContent: any) {
+    // Handle the addition of new content
+    console.log(newContent.creator);
+    const contentToAdd = { ...newContent, tags: Array.isArray(newContent.tags) ? newContent.tags : [] };
+    this.contentArray.push(contentToAdd);
   }
 }

@@ -4,11 +4,19 @@
 </div>   -->
 
 <br>
-<input type="text" [(ngModel)]="searchTitle" placeholder="Enter type here...">
+<app-create-content (contentAdded)="onContentAdded($event)"></app-create-content>
+
+<div *ngFor="let content of contentArray; let first = first" class="content-card-container" [ngClass]="{'first': first}" >
+    <app-content-card [content]="content"></app-content-card>
+    
+</div>  
+<br>
+<br>
+<input type="text" [ngModel]="searchTitle" placeholder="Enter type here...">
 <button (click)="searchCard()">Submit</button>
 <p [style.color]="searchClr">{{searchMsg}}</p>
 
-<h2>Content with no type</h2>
+<!-- <h2>Content with no type</h2>
 <app-content-card *ngFor="let item of (contentArray | contentFilter: ' ')" [content]="item"></app-content-card>
 
 <h2>Content with type 'Spiritual'</h2>
@@ -18,4 +26,4 @@
 <app-content-card *ngFor="let item of (contentArray | contentFilter: 'Motivational')" class="type-motivational" [content]="item"></app-content-card>
 
 <h2>Content with type 'Comic'</h2>
-<app-content-card *ngFor="let item of (contentArray | contentFilter: 'Comic')" class="type-comic" [content]="item"></app-content-card>
+<app-content-card *ngFor="let item of (contentArray | contentFilter: 'Comic')" class="type-comic" [content]="item"></app-content-card> -->
