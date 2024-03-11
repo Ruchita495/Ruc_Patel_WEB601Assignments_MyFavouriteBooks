@@ -15,9 +15,9 @@ export class AppMessagesComponent implements OnInit{
   constructor(private messagesService: MessagesServiceService) {}
 
   ngOnInit(): void {
-    this.messagesService.messages$.subscribe(messages => {
-      this.messages = messages;
-    });
+    this.messagesService.messages$.subscribe((message) => {
+      this.messages.push(message);
+    })
   }
 
 }

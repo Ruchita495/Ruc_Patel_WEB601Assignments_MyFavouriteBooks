@@ -18,27 +18,33 @@ export class ContentListComponent implements OnInit{
 
   constructor(private bookService: BookServiceService) {}
 
-  ngOnInit(): void {
-    this.bookService.getContentArray().subscribe(data => {
+  ngOnInit() {
+    this.loadContentArray();
+  }
+
+  loadContentArray() {
+    this.bookService.getContentArray().subscribe((data) => {
       this.contentArray = data;
+      console.log('Content array loaded!');
     });
   }
+
   // contentArray: Content[];
  
-  // searchTitle: string = '';
-  // searchMsg: string = '';
-  // searchClr: string = '';
+  searchTitle: string = '';
+  searchMsg: string = '';
+  searchClr: string = '';
 
-  // searchCard(): void{
-  //   const foundContent = this.contentArray.find(content => content.title === this.searchTitle); 
+  searchCard(): void{
+    const foundContent = this.contentArray.find(content => content.title === this.searchTitle); 
 
-  //   if (foundContent) {
-  //     this.searchMsg = `Content with title "${this.searchTitle}" exists.`;
-  //     this.searchClr = 'green';
-  //   }
-  //   else {
-  //     this.searchMsg = `Content with title "${this.searchTitle}" does not exist.`;
-  //     this.searchClr = 'red';
-  //   }
-  // }
+    if (foundContent) {
+      this.searchMsg = `Content with title "${this.searchTitle}" exists.`;
+      this.searchClr = 'green';
+    }
+    else {
+      this.searchMsg = `Content with title "${this.searchTitle}" does not exist.`;
+      this.searchClr = 'red';
+    }
+  }
 }

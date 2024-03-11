@@ -1,4 +1,6 @@
-export const contentArray = [
+import { Content } from "./content-interface"
+
+export const contentArray: Content[] = [
     {
           id: 1,
           title: 'Bhagavad Gita',
