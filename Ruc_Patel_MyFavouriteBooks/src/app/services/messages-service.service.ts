@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 export class MessagesServiceService {
 
   private messagesSubject = new Subject<string>();
-  messages$ = this.messagesSubject.asObservable();
+  messages = this.messagesSubject.asObservable();
 
   constructor() { }
   sendMessage(message: string) {
