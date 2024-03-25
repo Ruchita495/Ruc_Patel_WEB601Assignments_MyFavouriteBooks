@@ -6,13 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { HoverAffectDirective } from '../hover-affect.directive';
 import { BookServiceService } from '../services/book-service.service';
 import { MessagesServiceService } from '../services/messages-service.service';
+import { ModifyContentComponent } from "../modify-content/modify-content.component";
 
 @Component({
-  selector: 'app-content-list',
-  standalone: true,
-  imports: [CommonModule, ContentCardComponent, FormsModule, ContentFilterPipe, HoverAffectDirective],
-  templateUrl: './content-list.component.html',
-  styleUrl: './content-list.component.scss'
+    selector: 'app-content-list',
+    standalone: true,
+    templateUrl: './content-list.component.html',
+    styleUrl: './content-list.component.scss',
+    imports: [CommonModule, ContentCardComponent, FormsModule, ContentFilterPipe, HoverAffectDirective, ModifyContentComponent]
 })
 export class ContentListComponent implements OnInit{
   contentArray: any[] = [];
@@ -20,7 +21,7 @@ export class ContentListComponent implements OnInit{
   constructor(private bookService: BookServiceService, private messageService: MessagesServiceService) {}
 
   onContentAdded(newContent: any) {
-    this.contentArray.push(newContent);
+    //this.contentArray.push(newContent);
     this.messageService.sendMessage(`Content '${newContent.title}' added successfully!`);
   }
   ngOnInit() {
