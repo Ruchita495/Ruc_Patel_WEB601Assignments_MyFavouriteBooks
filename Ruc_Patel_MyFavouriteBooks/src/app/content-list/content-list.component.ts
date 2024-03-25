@@ -5,6 +5,7 @@ import { ContentFilterPipe } from "../content-filter.pipe";
 import { FormsModule } from '@angular/forms';
 import { HoverAffectDirective } from '../hover-affect.directive';
 import { BookServiceService } from '../services/book-service.service';
+import { MessagesServiceService } from '../services/messages-service.service';
 
 @Component({
   selector: 'app-content-list',
@@ -16,8 +17,12 @@ import { BookServiceService } from '../services/book-service.service';
 export class ContentListComponent implements OnInit{
   contentArray: any[] = [];
 
-  constructor(private bookService: BookServiceService) {}
+  constructor(private bookService: BookServiceService, private messageService: MessagesServiceService) {}
 
+  onContentAdded(newContent: any) {
+    this.contentArray.push(newContent);
+    this.messageService.sendMessage(`Content '${newContent.title}' added successfully!`);
+  }
   ngOnInit() {
     this.loadContentArray();
   }
@@ -36,7 +41,7 @@ export class ContentListComponent implements OnInit{
   searchClr: string = '';
 
   searchCard(): void{
-    const foundContent = this.contentArray.find(content => content.title === this.searchTitle); 
+    const foundContent = this.contentArray.find(content => content.title.toLowerCase() === this.searchTitle); 
 
     if (foundContent) {
       this.searchMsg = `Content with title "${this.searchTitle}" exists.`;
